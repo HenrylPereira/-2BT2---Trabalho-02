@@ -1,22 +1,18 @@
 import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
 
 public class PessoaDAO{
-    HashMap<Integer, Pessoa> pessoas = new HashMap<Integer, Pessoa>();
+    HashMap<Integer, String> pessoas = new HashMap<Integer, String>();
 
-    public Pessoa getById(int id){
+    public String getById(int id){
         return pessoas.get(id);
     }
 
-    public List<Pessoa> getAll(){
-        ArrayList<Pessoa>lista = new ArrayList<>();
-        lista.addAll(pessoas.values());
-        return lista;
+    public HashMap getAll(){
+        return pessoas;
     }
 
     public void add(Pessoa pessoa){
-        pessoas.put(pessoa.getId(), pessoa);
+        pessoas.put(pessoa.getId(), pessoa.getNome());
     }
 
     public void delete(Pessoa pessoa){
